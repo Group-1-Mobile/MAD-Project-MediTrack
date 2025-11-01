@@ -23,7 +23,7 @@ By empowering users to take medications on time, the app promotes better health 
 
 ## 🎨 Figma Design Board
 
-👉 [Click here to view the Figma prototype](https://www.figma.com/your-link-here)
+👉 [Click here to view the Figma prototype](https://www.figma.com/design/FAXAZr9nM032Ro7T33yTWj/meditrack?node-id=3-3905&t=qHWrHojWYcCwp1GB-1)
 
 ---
 
