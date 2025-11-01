@@ -13,11 +13,11 @@ By empowering users to take medications on time, the app promotes better health 
 
 | Name                 | ID      | Role                             |
 | -------------------- | ------- | -------------------------------- |
-| **Biruk Alemayehu**  | 0322/15 | Project Lead / Backend Developer |
-| **Ferhan Hussein**   | 0573/15 | Database & Logic Integration     |
-| **Firdos Mohamed**   | 0593/15 | UI/UX Designer                   |
-| **Mollaling Daniel** | 1070/15 | Lead Android Developer           |
-| **Natnael Samuel**   | 1125/15 | Documentation & Testing Lead     |
+| **Biruk Alemayehu**  | 0322/15 | Database & logic developer |
+| **Ferhan Hussein**   | 0573/15 | Android Developer & Testing     |
+| **Firdos Mohamed**   | 0593/15 | Lead UI/UX Designer                   |
+| **Mollaling Daniel** | 1070/15 | Project Lead           |
+| **Natnael Samuel**   | 1125/15 | Lead Android Developer     |
 
 ---
 
