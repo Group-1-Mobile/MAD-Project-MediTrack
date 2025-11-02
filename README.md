@@ -29,7 +29,7 @@ By empowering users to take medications on time, the app promotes better health 
 
 ## 🧠 Jira Project Board
 
-👉 [Click here to view our Jira board](https://www.atlassian.com/software/jira/your-link-here)
+👉 [Click here to view our Jira board](https://birukalem35.atlassian.net/jira/software/projects/MADPMR/boards/34?atlOrigin=eyJpIjoiNjRlNmZkYzkwMzQ4NDFhOTg0YWI0ZWI5NTY5YjhiODMiLCJwIjoiaiJ9)
 
 ---
 
