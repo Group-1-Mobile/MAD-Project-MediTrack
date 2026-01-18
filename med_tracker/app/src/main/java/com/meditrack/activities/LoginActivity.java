@@ -1,0 +1,85 @@
+package com.meditrack.activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.meditrack.R;
+import com.meditrack.database.AppDatabase;
+import com.meditrack.models.User;
+import com.meditrack.utils.SharedPrefsHelper;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+public class LoginActivity extends AppCompatActivity {
+
+    private EditText etEmail, etPassword;
+    private AppDatabase db;
+    private SharedPrefsHelper sharedPrefsHelper;
+    private final Executor executor = Executors.newSingleThreadExecutor();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        db = AppDatabase.getInstance(this);
+        sharedPrefsHelper = SharedPrefsHelper.getInstance(this);
+
+        etEmail = findViewById(R.id.et_email);
+        etPassword = findViewById(R.id.et_password);
+        Button btnLogin = findViewById(R.id.btn_login_submit);
+        TextView tvRegisterLink = findViewById(R.id.tv_register_link);
+        ImageButton btnBack = findViewById(R.id.btn_back);
+
+        btnBack.setOnClickListener(v -> finish());
+
+        btnLogin.setOnClickListener(v -> loginUser());
+
+        tvRegisterLink.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            finish();
+        });
+
+        findViewById(R.id.tv_forgot_password).setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+        });
+    }
+
+    private void loginUser() {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        executor.execute(() -> {
+            User user = db.userDao().getUserByEmail(email);
+            runOnUiThread(() -> {
+                if (user != null && user.getPassword().equals(password)) {
+                    // Save login state
+                    sharedPrefsHelper.setLoggedIn(true);
+                    sharedPrefsHelper.setUserName(user.getName());
+                    
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+    }
+}

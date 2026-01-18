@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_arrow_back"
+        android:scaleType="centerInside"
+        android:padding="12dp"
+        android:contentDescription="Back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginBottom="32dp"
+        app:tint="@color/text_primary"/>
+        <!-- Note: distinct ic_back_arrow usually preferred, checking if ic_close rotated works as plus/times. 
+             Ideally should replace with actual arrow if available, using ic_close as placeholder for now 
+             but typically a chevron is better. I'll rely on existing for now unless I make one -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back! Glad\nto see you, Again!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="48dp" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Enter your email"
+        android:paddingHorizontal="16dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp"
+        android:textColorHint="@color/text_hint" 
+        android:textSize="14sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Enter your password"
+            android:paddingHorizontal="16dp"
+            android:paddingEnd="48dp"
+            android:inputType="textPassword"
+            android:textColorHint="@color/text_hint"
+            android:textSize="14sp"/>
+            
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_medicine"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            app:tint="@color/text_hint" /> 
+            <!-- Placeholder for eye icon since not sure if available. 
+                 Using ic_medicine as placeholder is risky, prefer simple text or existing icon if check.
+                 Leaving simple for now. -->
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:layout_gravity="end"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:layout_marginBottom="48dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login_submit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Login"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/primary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? "
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_register_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>

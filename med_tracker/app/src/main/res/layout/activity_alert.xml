@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_medicine"
+            android:layout_marginBottom="24dp"
+            app:tint="@color/colorYellow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MEDICINE TIME"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:letterSpacing="0.1"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="hh:mm"
+            android:format24Hour="kk:mm"
+            android:textSize="64sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="a"
+            android:format24Hour=""
+            android:textSize="20sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="48dp"/>
+
+        <TextView
+            android:id="@+id/tv_medicine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vitamin D"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_dosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Capsule, 1000mg"
+            android:textSize="18sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="64dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_take"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="TAKE MEDICINE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="36dp"
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_snooze"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="SNOOZE 10 MIN"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="30dp"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"
+            app:backgroundTint="#00000000"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

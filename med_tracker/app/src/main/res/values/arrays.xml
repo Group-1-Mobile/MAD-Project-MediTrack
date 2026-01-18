@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="medicine_types">
+        <item>Pill</item>
+        <item>Liquid</item>
+        <item>Injection</item>
+        <item>Tablet</item>
+        <item>Capsule</item>
+        <item>Drops</item>
+        <item>Inhaler</item>
+        <item>Powder</item>
+    </string-array>
+
+    <string-array name="frequency_options">
+        <item>@string/freq_once_daily</item>
+        <item>@string/freq_twice_daily</item>
+        <item>@string/freq_three_times_daily</item>
+        <item>@string/freq_four_times_daily</item>
+        <item>@string/freq_every_other_day</item>
+        <item>@string/freq_weekly</item>
+        <item>@string/freq_as_needed</item>
+    </string-array>
+</resources>

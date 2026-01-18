@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_medicine"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_medicine"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MediTrack"
+        tools:targetApi="31">
+
+        <!-- Alert Activity (Full Screen) -->
+        <activity
+            android:name=".activities.AlertActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:showOnLockScreen="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- Splash Activity (Launcher) -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MediTrack.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Onboarding Activity -->
+        <activity
+            android:name=".activities.OnboardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Welcome Activity -->
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Register Activity -->
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Forgot Password Flow -->
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.VerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.ResetPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.SuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- History Activity -->
+        <activity
+            android:name=".activities.HistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Manage Med Activity -->
+        <activity
+            android:name=".activities.ManageMedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <!-- Add/Edit Medicine Activity -->
+        <activity
+            android:name=".activities.AddEditMedicineActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Medicine Detail Activity -->
+        <activity
+            android:name=".activities.MedicineDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Progress Report Activity -->
+        <activity
+            android:name=".activities.ProgressReportActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Alarm Receiver -->
+        <receiver
+            android:name=".receivers.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name=".receivers.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

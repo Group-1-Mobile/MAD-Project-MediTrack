@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Left: Calendar Icon -->
+                <ImageView
+                    android:id="@+id/btn_calendar_top"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_calendar_top"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Right: Profile and Settings -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/btn_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_profile"
+                        android:padding="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_marginEnd="8dp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- DASHBOARD VIEW (Populated) -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layout_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="16dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Calendar Strip -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="32dp" />
+
+                <!-- Intakes Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intakes"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp" />
+
+                <FrameLayout
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="48dp">
+                    
+                    <!-- Circular BG -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_circle_grey"
+                        android:backgroundTint="#F0F8FF" /> 
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/progress_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:indicatorSize="200dp"
+                        app:trackThickness="10dp"
+                        app:trackColor="@android:color/transparent"
+                        app:indicatorColor="@color/primary"
+                        android:max="100"
+                        android:progress="0" 
+                        app:indicatorDirectionCircular="clockwise"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_medicine" 
+                            android:layout_marginBottom="8dp"
+                            app:tint="@color/colorYellow"/> 
+                            <!-- Using simple icon for now, ideally vector pill -->
+                        
+                        <TextView
+                            android:id="@+id/tv_progress_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/0"
+                            android:textSize="36sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary" />
+                            <!-- Need to support '0/2' styling with blue 2 part logic in code if needed, or simple text -->
+
+                        <TextView
+                            android:id="@+id/tv_current_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tuesday"
+                            android:textColor="@color/text_hint"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Medicine List -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_medicines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="80dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- EMPTY STATE VIEW (Zero Meds) -->
+        <LinearLayout
+            android:id="@+id/layout_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_snooze" 
+                android:layout_marginBottom="32dp"/>
+                <!-- Placeholder, would be better to combine calendar+bell -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage your meds"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add your meds to be reminded on\ntime and track your health"
+                android:textSize="16sp"
+                android:textColor="@color/text_hint"
+                android:gravity="center"
+                android:layout_marginBottom="64dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_med_empty"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Add medicine"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="32dp"
+                app:backgroundTint="@color/colorYellow"/>
+
+            <TextView
+                android:id="@+id/tv_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign out"
+                android:textColor="@color/colorRed"
+                android:textSize="16sp"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+
+        <!-- FAB (Only in dashboard) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="24dp"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/primary"
+            app:tint="@android:color/white"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize16dp" /> 
+            <!-- Need to define shape style or use attribute -->
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

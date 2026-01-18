@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">MediTracker</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_tagline">Your Medication Companion</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Never Miss a Dose</string>
+    <string name="onboarding_desc_1">Keep track of all your medications in one place with easy-to-use reminders</string>
+    <string name="onboarding_title_2">Timely Reminders</string>
+    <string name="onboarding_desc_2">Get notified at the right time to take your medicine, even when your phone is locked</string>
+    <string name="onboarding_title_3">Track Your Progress</string>
+    <string name="onboarding_desc_3">Monitor your medication adherence and see your health journey at a glance</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    
+    <!-- Main Screen -->
+    <string name="my_medicines">My Medicines</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="no_medicines_yet">No medicines added yet</string>
+    <string name="no_medicines_desc">Tap the + button to add your first medicine</string>
+    <string name="menu_reports">Progress Reports</string>
+    <string name="menu_settings">Settings</string>
+    
+    <!-- Add/Edit Medicine -->
+    <string name="add_new_medicine">Add New Medicine</string>
+    <string name="edit_medicine">Edit Medicine</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="medicine_name_hint">e.g., Aspirin</string>
+    <string name="dosage">Dosage</string>
+    <string name="dosage_hint">e.g., 500mg</string>
+    <string name="frequency">Frequency</string>
+    <string name="reminder_time">Reminder Time</string>
+    <string name="select_time">Select Time</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    
+    <!-- Frequency Options -->
+    <string name="freq_once_daily">Once daily</string>
+    <string name="freq_twice_daily">Twice daily</string>
+    <string name="freq_three_times_daily">Three times daily</string>
+    <string name="freq_four_times_daily">Four times daily</string>
+    <string name="freq_every_other_day">Every other day</string>
+    <string name="freq_weekly">Weekly</string>
+    <string name="freq_as_needed">As needed</string>
+    
+    <!-- Medicine Details -->
+    <string name="medicine_details">Medicine Details</string>
+    <string name="history">History</string>
+    <string name="no_history">No history available</string>
+    <string name="adherence_rate">Adherence Rate</string>
+    <string name="edit">Edit</string>
+    <string name="delete_medicine">Delete Medicine</string>
+    <string name="delete_confirmation">Are you sure you want to delete this medicine?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- Dose Status -->
+    <string name="taken">Taken</string>
+    <string name="missed">Missed</string>
+    <string name="skipped">Skipped</string>
+    <string name="mark_as_taken">Mark as Taken</string>
+    <string name="mark_as_missed">Mark as Missed</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">Medicine Reminders</string>
+    <string name="notification_channel_desc">Notifications for medication reminders</string>
+    <string name="notification_title">Time to take your medicine</string>
+    <string name="notification_text">%1$s - %2$s</string>
+    <string name="take">Take</string>
+    <string name="snooze">Snooze</string>
+    <string name="dismiss">Dismiss</string>
+    
+    <!-- Progress Reports -->
+    <string name="progress_reports">Progress Reports</string>
+    <string name="select_period">Select Period</string>
+    <string name="last_7_days">Last 7 Days</string>
+    <string name="last_30_days">Last 30 Days</string>
+    <string name="this_month">This Month</string>
+    <string name="overall_adherence">Overall Adherence</string>
+    <string name="total_doses">Total Doses</string>
+    <string name="doses_taken">Doses Taken</string>
+    <string name="doses_missed">Doses Missed</string>
+    <string name="by_medicine">By Medicine</string>
+    
+    <!-- Validation Messages -->
+    <string name="error_empty_name">Please enter medicine name</string>
+    <string name="error_empty_dosage">Please enter dosage</string>
+    <string name="error_select_time">Please select reminder time</string>
+    <string name="medicine_added">Medicine added successfully</string>
+    <string name="medicine_updated">Medicine updated successfully</string>
+    <string name="medicine_deleted">Medicine deleted successfully</string>
+    <string name="error_saving">Error saving medicine</string>
+    
+    <!-- Time Format -->
+    <string name="time_format">hh:mm a</string>
+    <string name="date_format">MMM dd, yyyy</string>
+    <string name="datetime_format">MMM dd, yyyy hh:mm a</string>
+    
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="close">Close</string>
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+    <string name="next_dose">Next dose:</string>
+    <string name="at">at</string>
+</resources>
